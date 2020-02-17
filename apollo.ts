@@ -11,11 +11,6 @@ export const getMyToken = gql`
 	}
 `;
 
-export const addMyToken = gql`
-	mutation myToken($token: Int!) {
-		addToken(token: $token) @client
-	}
-`
 const httpLink = createHttpLink({
 	uri: 'http://localhost:4000/graphql'
 });

@@ -14,6 +14,7 @@
     "apollo-client": "^2.6.8",
     "apollo-link-context": "^1.0.19",
     "apollo-link-http": "^1.5.16",
+    "formik": "^2.1.4",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "next": "9.2.1",
@@ -22,7 +23,8 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-lottie": "^1.2.3",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "yup": "^0.28.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.12.2",
@@ -34,6 +36,7 @@
     "@types/react": "^16.9.19",
     "@types/react-lottie": "^1.2.3",
     "@types/styled-components": "^4.4.3",
+    "@types/yup": "^0.26.31",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.7.5"
   }

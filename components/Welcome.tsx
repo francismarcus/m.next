@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import HomeButton from 'components/HomeButton';
 import TermsAndConditions from 'components/TermsAndConditions';
+import Router from 'next/router';
 
 export default () => (
 	<Flexbox>
 		<Wrapper>
 			<Emoji> 💪</Emoji>
 			<StyledText> Welcome to Myprogram </StyledText>
-			<HomeButton onClick={() => console.log('login')}> Login </HomeButton>
+			<HomeButton onClick={() => Router.push('/login')}> Login </HomeButton>
 			<HomeButton onClick={() => console.log('acc')}> Create account </HomeButton>
 		</Wrapper>
 	</Flexbox>

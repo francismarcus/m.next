@@ -1,7 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
-import withApollo from 'graphql/apollo';
+import withApollo from 'apollo';
 import { createGlobalStyle } from 'styled-components';
 import ThemeProvider from 'components/ThemeProvider';
 

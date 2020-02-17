@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Router from 'next/router';
 import dynamic from 'next/dynamic';
-import { getMyToken } from 'graphql/apollo';
+import { getMyToken } from 'apollo';
 import { useApolloClient } from '@apollo/react-hooks';
 import Loading from 'components/lotties/Loading';
 
@@ -12,11 +12,13 @@ const Page = () => {
 
 	useEffect(() => {
 		if (token) return;
-		else Router.replace('/', '/welcome', { shallow: true });
-	}, []);
+		//else Router.replace('/', '/welcome', { shallow: true });
+	}, [token]);
 
+
+	if (!token) return <Welcome />
 	if (token) console.log(token)
-	if (!token) console.log('no token')
+
 
 	return <Loading />;
 };
