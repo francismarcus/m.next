@@ -14,6 +14,13 @@ declare module 'styled-components' {
 			text: string;
 
 			watermelon: string;
+			green: string;
+			darkcyan: string;
+			orange: string;
+			charcoal: string;
+			bluecharcoal: string;
+			grey: string;
+			white: string;
 		};
 		spacing: {
 			tiny: string;

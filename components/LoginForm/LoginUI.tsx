@@ -1,13 +1,13 @@
 import React from 'react';
 import { Form } from 'formik';
 import AuthInput from 'components/AuthInput';
-import AuthButton from 'components/AuthButton'
+import AuthButton from 'components/AuthButton';
 import { ApolloError } from 'apollo-client';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-const LoginForm: React.FC<Props> = ({ error, loading, ...props }) => (
+const LoginForm: React.FC<Props> = ({ error, isLoading, ...props }) => (
 	<Form>
-		<StyledForm loading={loading}>
+		<StyledForm isLoading={isLoading}>
 			<AuthInput name="email" label="Email" />
 			<AuthInput name="password" label="Password" type="password" />
 
@@ -19,15 +19,15 @@ const LoginForm: React.FC<Props> = ({ error, loading, ...props }) => (
 
 interface Props {
 	error: ApolloError | undefined;
-	loading: any
+	isLoading: boolean;
 }
 
 export default LoginForm;
 
 const StyledForm = styled.div<StyledFormProps>`
-	opacity: ${props => props.loading ? '25%' : '100'};
-`
+	opacity: ${props => (props.isLoading ? '25%' : '100')};
+`;
 
 interface StyledFormProps {
-	loading: boolean;
+	isLoading: boolean;
 }

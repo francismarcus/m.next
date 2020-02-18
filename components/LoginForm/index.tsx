@@ -5,10 +5,18 @@ import { useLoginMutation } from 'graphql/generated';
 import Router from 'next/router';
 
 export default () => {
-	const [login, { error, client, loading }] = useLoginMutation();
+	const [login, { error, client, loading, data }] = useLoginMutation();
 
-	if (error) console.log(error)
-	if (loading) console.log(loading)
+	if (error) console.log(error);
+	if (loading) console.log(loading);
+
+	const Loading = () => {
+		if (loading) return true;
+		if (data) return true;
+		else return false;
+	};
+
+	const isLoading = Loading();
 
 	return (
 		<Formik
@@ -34,7 +42,7 @@ export default () => {
 				}
 			}}
 		>
-			<LoginUI error={error} loading={loading} />
+			<LoginUI error={error} isLoading={isLoading} />
 		</Formik>
 	);
 };

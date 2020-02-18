@@ -19,9 +19,9 @@ const defaultOptions = {
 
 const Flexbox = styled.div`
 	flex: 1;
-	background-color: ${({ theme }) => theme.colors.bg};
+	background-color: ${({ theme }) => theme.colors.white};
 	height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+	align-items: center;
 `;

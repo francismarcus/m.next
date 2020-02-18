@@ -2,22 +2,25 @@ import styled from 'styled-components';
 import HomeButton from 'components/HomeButton';
 import TermsAndConditions from 'components/TermsAndConditions';
 import Router from 'next/router';
+import FadeIn from 'components/FadeIn';
 
 export default () => (
-	<Flexbox>
-		<Wrapper>
-			<Emoji> 💪</Emoji>
-			<StyledText> Welcome to Myprogram </StyledText>
-			<HomeButton onClick={() => Router.push('/login')}> Login </HomeButton>
-			<HomeButton onClick={() => console.log('acc')}> Create account </HomeButton>
-		</Wrapper>
-	</Flexbox>
+	<FadeIn delay={100}>
+		<Flexbox>
+			<Wrapper>
+				<Emoji> 💪</Emoji>
+				<StyledText> Welcome to Myprogram </StyledText>
+				<HomeButton onClick={() => Router.push('/login')}> Login </HomeButton>
+				<HomeButton onClick={() => console.log('acc')}> Create account </HomeButton>
+			</Wrapper>
+		</Flexbox>
+	</FadeIn>
 );
 
 const StyledText = styled.p`
 	font-size: ${({ theme }) => theme.fz.t3};
 	font-weight: 500;
-	color: ${({ theme }) => theme.colors.bg};
+	color: ${({ theme }) => theme.colors.white};
 	margin-bottom: ${({ theme }) => theme.spacing.xlarge};
 `;
 const Emoji = styled.p`
@@ -37,7 +40,8 @@ const Wrapper = styled.div`
 
 const Flexbox = styled.div`
 	flex: 1;
-	background-color: ${({ theme }) => theme.colors.primary};
+	background-color: ${({ theme }) => theme.colors.watermelon};
 	height: 100vh;
 	display: flex;
+	width: 100%;
 `;

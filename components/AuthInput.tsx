@@ -22,19 +22,19 @@ const StyledView = styled.div`
 `;
 
 const StyledText = styled.p`
-	color: ${({ theme }) => theme.colors.bg};
+	color: ${({ theme }) => theme.colors.white};
 	font-size: ${({ theme }) => theme.fz.regular};
 `;
 
 const StyledInput = styled.input`
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.watermelon};
 	padding: ${({ theme }) => theme.spacing.small} 0;
 	border-top-width: 0px;
 	border-left-width: 0px;
 	border-right-width: 0px;
-    border-bottom-color: ${({ theme }) => theme.colors.bg};
+    border-bottom-color: ${({ theme }) => theme.colors.white};
 	border-bottom-width: 1px;
-	color: ${({ theme }) => theme.colors.bg};
+	color: ${({ theme }) => theme.colors.white};
 	font-family: 'Montserrat', sans-serif;
 	font-size: ${({ theme }) => theme.fz.small};
 	&:focus { outline: none; };
@@ -50,11 +50,13 @@ const StyledInput = styled.input`
 
 const StyledErrorMessage = styled.div`
 font-size: ${({ theme }) => theme.fz.small};
-  color: var(--red-600);
+  color: ${({ theme }) => theme.colors.text};
   width: 400px;
   margin-top: 0.25rem;
   &:before {
     content: "❌ ";
-    font-size: font-size: ${({ theme }) => theme.fz.micro};
+	font-size: font-size: ${({ theme }) => theme.fz.micro};
+
   };
 `
+

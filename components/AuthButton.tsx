@@ -14,7 +14,7 @@ const StyledTouchableHighlight = styled.button`
 	border-radius: 40px;
 	border-width: 1px;
 	border-color: ${({ theme }) => theme.colors.watermelon};
-	background-color: ${({ theme }) => theme.colors.bg};
+	background-color: ${({ theme }) => theme.colors.white};
     margin-bottom: ${({ theme }) => theme.spacing.base};
     display: flex;
     justify-content: center;

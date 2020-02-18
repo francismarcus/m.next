@@ -29,6 +29,7 @@ const colors = {
 	charcoal: '#484848',
 	bluecharcoal: '#1F2933',
 	grey: '#767676',
+	white: 'white'
 }
 
 const shared = {
