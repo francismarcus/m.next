@@ -7,6 +7,9 @@ import Router from 'next/router';
 export default () => {
 	const [login, { error, client, loading }] = useLoginMutation();
 
+	if (error) console.log(error)
+	if (loading) console.log(loading)
+
 	return (
 		<Formik
 			initialValues={{
@@ -26,12 +29,12 @@ export default () => {
 							myToken: token
 						}
 					});
-					await localStorage.setItem('authToken', token);
+					await localStorage.setItem('token', token);
 					return Router.push('/');
 				}
 			}}
 		>
-			<LoginUI error={error} />
+			<LoginUI error={error} loading={loading} />
 		</Formik>
 	);
 };

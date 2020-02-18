@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default ({ children }: { children: React.ReactNode }) => (
-	<StyledTouchableHighlight>
+	<StyledTouchableHighlight type="submit"
+	>
 		<StyledText> {children} </StyledText>
 	</StyledTouchableHighlight>
 );
@@ -19,10 +20,9 @@ const StyledTouchableHighlight = styled.button`
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    margin-top: ${({ theme }) => theme.spacing.base};
+	margin-top: ${({ theme }) => theme.spacing.base};
 `;
 
 const StyledText = styled.span`
     font-size: ${({ theme }) => theme.fz.t2};
-    margin-bottom: 9px;
 `;

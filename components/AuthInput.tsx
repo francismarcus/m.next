@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeConsumer, ThemeContext } from 'styled-components';
 import { useField } from 'formik';
 
 export default ({ label, ...props }: any) => {
@@ -9,7 +9,8 @@ export default ({ label, ...props }: any) => {
 	return (
 		<StyledView>
 			<StyledText>{label}</StyledText>
-			<StyledInput />
+			<StyledInput {...props} {...field} />
+			{errorMsg && <StyledErrorMessage> {errorMsg} </StyledErrorMessage>}
 		</StyledView>
 	);
 };
@@ -35,6 +36,25 @@ const StyledInput = styled.input`
 	border-bottom-width: 1px;
 	color: ${({ theme }) => theme.colors.bg};
 	font-family: 'Montserrat', sans-serif;
-
-	&:focus { outline: none; }
+	font-size: ${({ theme }) => theme.fz.small};
+	&:focus { outline: none; };
+	
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+	  -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+	  -webkit-transition-delay: 9999s;
+	}
 `;
+
+const StyledErrorMessage = styled.div`
+font-size: ${({ theme }) => theme.fz.small};
+  color: var(--red-600);
+  width: 400px;
+  margin-top: 0.25rem;
+  &:before {
+    content: "❌ ";
+    font-size: font-size: ${({ theme }) => theme.fz.micro};
+  };
+`
