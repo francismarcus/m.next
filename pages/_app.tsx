@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 	font-family: 'Montserrat', sans-serif;
 	height: 100%;
 	width: 100%;
-	background: 'red';
+	background-color: 'red';
   }
 `;
 

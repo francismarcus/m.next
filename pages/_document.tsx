@@ -53,9 +53,8 @@ export default class MyDocument extends Document {
 							}
 							body {
 								font-size: 1rem;
-                			margin: 0;
-              }
-              
+								margin: 0;
+							}
 						`}
 					</style>
 				</Head>

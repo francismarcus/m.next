@@ -4,15 +4,18 @@ import AuthInput from 'components/AuthInput';
 import AuthButton from 'components/AuthButton';
 import { ApolloError } from 'apollo-client';
 import styled from 'styled-components';
+import FadeIn from 'components/FadeIn';
 
 const LoginForm: React.FC<Props> = ({ error, isLoading, ...props }) => (
 	<Form>
 		<StyledForm isLoading={isLoading}>
-			<AuthInput name="email" label="Email" />
-			<AuthInput name="password" label="Password" type="password" />
+			<FadeIn delay={50}>
+				<AuthInput name="email" label="Email" />
+				<AuthInput name="password" label="Password" type="password" />
 
-			{error && <p> {error.graphQLErrors[0].message} </p>}
-			<AuthButton> 👉 </AuthButton>
+				{error && <p> {error.graphQLErrors[0].message} </p>}
+				<AuthButton> 👉 </AuthButton>
+			</FadeIn>
 		</StyledForm>
 	</Form>
 );

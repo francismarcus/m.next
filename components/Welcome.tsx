@@ -5,7 +5,7 @@ import Router from 'next/router';
 import FadeIn from 'components/FadeIn';
 
 export default () => (
-	<FadeIn delay={100}>
+	<FadeIn delay={25}>
 		<Flexbox>
 			<Wrapper>
 				<Emoji> 💪</Emoji>
